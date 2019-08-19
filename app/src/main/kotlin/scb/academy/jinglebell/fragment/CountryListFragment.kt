@@ -47,6 +47,9 @@ class CountryListFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             itemAnimator = DefaultItemAnimator()
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
+            addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL))
+
+
         }
 
         loadCountries()
