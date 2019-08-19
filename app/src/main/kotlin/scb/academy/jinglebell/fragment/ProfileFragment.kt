@@ -24,20 +24,16 @@ class ProfileFragment : Fragment(){
 
         val editText = _view.findViewById(R.id.editText) as EditText
 
-
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                _view.textView.setText("Welcome "+ editText.text.toString())
                 val intent = Intent(context, ProfileActivity::class.java)
-                intent.putExtra("name", editText.text.toString())
+                intent.putExtra("nickname", editText.text.toString())
                 startActivity(intent)
-
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                var text:String = editText.text.toString()
 
 
             }

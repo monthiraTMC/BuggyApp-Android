@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_profile_detail.*
 import scb.academy.jinglebell.R
 import scb.academy.jinglebell.fragment.CountryListFragment
 import scb.academy.jinglebell.fragment.ProfileFragment
@@ -16,7 +17,9 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_detail)
-        
+
+        val nickname:String = intent.getStringExtra("nickname")
+        nicknameTextView.setText(nickname)
 
     }
 
