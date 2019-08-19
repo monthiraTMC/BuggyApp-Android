@@ -1,11 +1,13 @@
 package scb.academy.jinglebell.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import scb.academy.jinglebell.R
+import scb.academy.jinglebell.activity.SongInfoActivity
 import scb.academy.jinglebell.extension.setImageUrl
 import scb.academy.jinglebell.model.Song
 
@@ -59,5 +61,7 @@ class SongItemViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
 }
 
 interface OnSongClickListener {
-    fun onSongClick(song: Song)
+    fun onSongClick(song: Song) {
+
+    }
 }
