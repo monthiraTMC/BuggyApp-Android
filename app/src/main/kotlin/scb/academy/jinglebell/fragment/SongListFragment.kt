@@ -37,13 +37,8 @@ class SongListFragment : Fragment(), OnSongClickListener {
 
         override fun onResponse(call: Call<SongSearchResult>, response: Response<SongSearchResult>) {
             context?.showToast("Success")
-            if (response.isSuccessful) {
-//                mDataArray.clear()
-//                mDataArray.addAll(response.body()!!.results)
-//
-//                //importtant
-//                mAdapter.notifyDataSetChanged()
-            }
+            val songs = response.body() ?: return
+            songAdapter.submitList(songs.results)
         }
     }
 
@@ -53,7 +48,7 @@ class SongListFragment : Fragment(), OnSongClickListener {
         songAdapter = SongAdapter(this)
         rvSongs.adapter = songAdapter
         rvSongs.layoutManager = LinearLayoutManager(context)
-        rvSongs.itemAnimator = DefaultItemAnimator()
+        rvSongs.itemAnimator = DefaultItemAnimator() as RecyclerView.ItemAnimator?
         rvSongs.addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
 
         loadSongs()
