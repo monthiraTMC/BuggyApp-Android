@@ -20,6 +20,7 @@ class SongAdapter(private val listener: OnSongClickListener)
 
     private var _songs: List<Song> = listOf()
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = SongItemViewHolder(parent)
 
     override fun onBindViewHolder(holder: SongItemViewHolder, position: Int) {
@@ -27,11 +28,7 @@ class SongAdapter(private val listener: OnSongClickListener)
     }
 
     override fun getItemCount(): Int {
-        return if (songs.count() == 0) {
-            0
-        } else {
-            songs.count() + 1
-        }
+            return  songs.size
     }
 
     fun submitList(list: List<Song>) {

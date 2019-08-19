@@ -13,6 +13,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import scb.academy.jinglebell.R
+import scb.academy.jinglebell.adapter.CountryAdapter
 import scb.academy.jinglebell.adapter.OnSongClickListener
 import scb.academy.jinglebell.adapter.SongAdapter
 import scb.academy.jinglebell.extension.showToast
@@ -36,6 +37,13 @@ class SongListFragment : Fragment(), OnSongClickListener {
 
         override fun onResponse(call: Call<SongSearchResult>, response: Response<SongSearchResult>) {
             context?.showToast("Success")
+            if (response.isSuccessful) {
+//                mDataArray.clear()
+//                mDataArray.addAll(response.body()!!.results)
+//
+//                //importtant
+//                mAdapter.notifyDataSetChanged()
+            }
         }
     }
 
