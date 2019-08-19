@@ -16,14 +16,13 @@ class SongInfoActivity : AppCompatActivity() {
 
     companion object {
         private const val EXTRA_SONG = "song"
-
         private const val DATE_FORMAT_ISO_8601 = "YYYY-MM-dd'T'HH:mm:ss'Z'"
         private const val DATE_FORMAT_DATE_ONLY = "YYYY-MM-dd"
 
-        fun startSongActivity(context: Context, song: Song? = null) =
+        fun startSongActivity(context: Context, song: Song? = null) {
             context.startActivity(Intent(context, SongInfoActivity::class.java))
+        }
     }
-
     private lateinit var ivSongArtWork: ImageView
     private lateinit var tvSongName: TextView
     private lateinit var tvSongAlbum: TextView
@@ -35,8 +34,6 @@ class SongInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_song_info)
-
-        song.
         ivSongArtWork = findViewById(R.id.iv_song_artwork)
         tvSongName = findViewById(R.id.tv_song_name)
         tvSongAlbum = findViewById(R.id.tv_song_album)
